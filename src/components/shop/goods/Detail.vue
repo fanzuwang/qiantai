@@ -149,7 +149,7 @@ export default {
   },
   data() {
     return {
-      num: 1,
+      num: 0,
       id: this.$route.params.id,
       top: {
         goodsinfo: {},
@@ -168,7 +168,9 @@ export default {
       });
     },
     addCart(){
-        this.$store.commit('modify',{id:this.id,num:this.num});
+        // this.$store.commit('modify',{id:this.id,num:this.num});
+        let newNum = this.num+(this.$store.state.cart[this.id] || 0);
+        this.$store.commit('modify',{id:this.id,num:newNum})
         this.num=0;
     }
   },
