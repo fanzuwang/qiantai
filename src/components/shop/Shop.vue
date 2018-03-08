@@ -2,15 +2,20 @@
   <div>
     <!-- 公共头部 -->
     <app-header></app-header>
+    <!-- 变化主体 -->
     <router-view></router-view>
+    <!-- 公共底部 -->
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import appHeader from '../components/shop/subcom/Header';
+import appHeader from './subcom/Header'
+import appFooter from './subcom/Footer'
   export default {
     components: {
-      appHeader
+      appHeader,
+      appFooter
     }
   }
 </script>
